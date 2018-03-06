@@ -11,9 +11,11 @@ namespace ParPorApp
         public App()
         {
             InitializeComponent();
+            
 
             SetMainPage();
             
+
         }
 
         private void SetMainPage()

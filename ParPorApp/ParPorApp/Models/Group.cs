@@ -21,5 +21,14 @@ namespace ParPorApp.Models
 
         [JsonProperty("UserId")]
         public string UserId { get; set; }
+
+        [JsonProperty("ImageUrl")]
+        public string ImageUrl { get; set; }
+
+        [JsonProperty("gameIcon")]
+        public string gameIcon { get; set; }
+
+        [JsonProperty("postDate")]
+        public string postDate { get; set; }
     }
 }

@@ -1,6 +1,8 @@
-﻿using Android.App;
+﻿using Acr.UserDialogs;
+using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using IconEntry.FormsPlugin.Android;
 using Microsoft.WindowsAzure.MobileServices;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
@@ -15,16 +17,15 @@ namespace ParPorApp.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-            
-
-            base.OnCreate(bundle);
-            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+			UserDialogs.Init(this);
+			base.OnCreate(bundle);
+            //Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
             Forms.Init(this, bundle);
             CurrentPlatform.Init();
             LoadApplication(new App());
-            //Plugin.Iconize.Droid.IconControls.Init(Resource.Id.toolbar, Resource.Id.tabs);
-            //Plugin.Iconize.Iconize.With(new Plugin.Iconize.Fonts.FontAwesomeModule());
-
+            IconEntryRenderer.Init();
+            
+            
         }
     }
 }
