@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ParPorApp.Views.AddEventPage"
              xmlns:viewModels="clr-namespace:ParPorApp.ViewModels;assembly=ParPorApp"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
              Title="Add a new event">
 
     <ContentPage.BindingContext>
@@ -11,14 +12,32 @@
 
     <StackLayout VerticalOptions="Center" Padding ="30">
         
-        <Label Text="Event Name"></Label>
-        <Entry Text="{Binding Name}"/>
-        <Label Text="Description"></Label>
-        <Entry Text="{Binding Description}"/>
+        <Label Text="Event Type"></Label>
+        <Picker SelectedItem="{Binding Name}">
+            <Picker.Items>
+                <x:String>Game</x:String>
+                <x:String>Training</x:String>
+            </Picker.Items>
+        </Picker>
+        <!--<Entry Text="{Binding Name}"/>-->
+        <Label Text="Additional note"></Label>
+        <Entry Text="{Binding Description}" />
         <Label Text="Start"></Label>
         <Entry Text="{Binding StartDateTime}"/>
         <Label Text="Finish"></Label>
         <Entry Text="{Binding EndDateTime}"/>
+        <DatePicker VerticalOptions="CenterAndExpand" Date="{x:Static system:DateTime.Now}">
+            <DatePicker.Format>MMM dd, yy</DatePicker.Format>
+            
+            <DatePicker.MaximumDate>
+                <system:DateTime x:FactoryMethod="Parse">
+                    <x:Arguments>
+                        <x:String>Dec 31 2050</x:String>
+                    </x:Arguments>
+                </system:DateTime>
+            </DatePicker.MaximumDate>
+        </DatePicker>
+
 
         <Button Command="{Binding AddEventCommand}"
                 Clicked="ReturnEventPage_Clicked"

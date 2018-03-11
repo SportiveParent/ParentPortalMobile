@@ -398,4 +398,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\ic_add%403x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_exit%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_exit%402x.png" />
+  </ItemGroup>
 </Project>
